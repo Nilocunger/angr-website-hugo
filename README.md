@@ -19,7 +19,7 @@ This will also create a Python 3 virtualenv called `hugo` into which the checkin
 ```
 make update
 ```
-Note: this will also run `make check` to make sure that there is no out of date code.
+Note: this will also run `make check` to make sure that there is no out of date code
 
 ## Uninstalling
 To remove the virtualenv and dependencies:
