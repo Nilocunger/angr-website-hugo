@@ -1,0 +1,15 @@
+sudo: required
+dist: xenial
+env:
+  - ANGR_ROOT=~/angr-dev
+install:
+  - ( curl https://raw.githubusercontent.com/angr/angr-dev/$TRAVIS_BRANCH/tests/travis-install.sh | grep -v 404 || curl https://raw.githubusercontent.com/angr/angr-dev/master/tests/travis-install.sh ) | bash
+  - make install
+script: make build
+deploy:
+  provider: pages
+  keep-history: true
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  on:
+    branch: master
