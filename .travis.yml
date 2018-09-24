@@ -7,6 +7,7 @@ install:
   - pushd ~
   - git clone -q https://github.com/angr/angr-dev
   - cd angr-dev
+  - export VIRTUALENVWRAPPER_PYTHON=$(pyenv which python)
   - ./setup.sh -i -w -b "$BRANCH" -"$PY" angr -s -c -C
   - ( curl https://raw.githubusercontent.com/angr/angr-dev/$TRAVIS_BRANCH/tests/travis-install.sh | grep -v 404 || curl https://raw.githubusercontent.com/angr/angr-dev/master/tests/travis-install.sh ) | bash
   - popd
