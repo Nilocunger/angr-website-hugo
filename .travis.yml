@@ -9,6 +9,7 @@ install:
   - cd angr-dev
   - export VIRTUALENVWRAPPER_PYTHON=$(pyenv which python)
   - ./setup.sh -i -w -b "$BRANCH" -"$PY" angr -s -c -C
+  - pip install virtualenv virtualenvwrapper
   - popd
   - make install
 script: make build
