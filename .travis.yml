@@ -9,7 +9,7 @@ install:
   - cd angr-dev
   - export VIRTUALENVWRAPPER_PYTHON=$(pyenv which python)
   - ./setup.sh -i -w -b "$BRANCH" -"$PY" angr -s -c -C
-  - pip install virtualenv virtualenvwrapper
+  - sudo -H pip install virtualenv virtualenvwrapper
   - ls /usr/local/bin
   - which virtualenvwrapper.sh
   - popd
