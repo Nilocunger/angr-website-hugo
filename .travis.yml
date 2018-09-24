@@ -10,6 +10,7 @@ install:
   - export VIRTUALENVWRAPPER_PYTHON=$(pyenv which python)
   - ./setup.sh -i -w -b "$BRANCH" -"$PY" angr -s -c -C
   - pip install virtualenv virtualenvwrapper
+  - which virtualenvwrapper.sh
   - popd
   - make install
 script: make build
