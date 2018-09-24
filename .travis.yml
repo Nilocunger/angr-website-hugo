@@ -3,13 +3,13 @@ dist: xenial
 env:
   - PY=e ANGR_ROOT=~/angr-dev
 install:
-  - pushd "$TRAVIS_BUILD_DIR"
-  - popd
-  - cd ~
+  - pushd ~
+  - git clone -q https://github.com/angr/angr-dev
+  - cd angr-dev
+  - ./setup.sh -i -w -b "$BRANCH" -"$PY" angr -s -c -C
   - ( curl https://raw.githubusercontent.com/angr/angr-dev/$TRAVIS_BRANCH/tests/travis-install.sh | grep -v 404 || curl https://raw.githubusercontent.com/angr/angr-dev/master/tests/travis-install.sh ) | bash
-  - pushd "$TRAVIS_BUILD_DIR"
   - popd
-  - pwd && cd "$TRAVIS_BUILD_DIR" && make install
+  - make install
 script: make build
 deploy:
   provider: pages
