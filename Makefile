@@ -1,6 +1,6 @@
 SHELL:=$(shell which bash)
-VIRTUALENVWRAPPER_SCRIPT=$(shell which virtualenvwrapper.sh)
-PYTHON3_LOCATION=/bin/python3
+VIRTUALENVWRAPPER_SCRIPT:=$(shell which virtualenvwrapper.sh)
+PYTHON3_LOCATION:=$(shell which python3)
 VIRTUALENVS:=$(shell source $(VIRTUALENVWRAPPER_SCRIPT) && workon)
 
 .PHONY: local
