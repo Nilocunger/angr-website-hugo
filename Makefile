@@ -6,8 +6,8 @@ VIRTUALENVS:=$(shell source $(VIRTUALENVWRAPPER_SCRIPT) && workon)
 .PHONY: local
 default: local
 
-public:
-	git clone git@github.com:angr/angr.github.io.git public
+#public:
+	#git clone git@github.com:angr/angr.github.io.git public
 
 .PHONY: install
 .ONESHELL:
@@ -32,7 +32,7 @@ check: install
 	python code-finder.py ${ANGR_ROOT} content/blog/*
 
 .PHONY: build
-build: check public
+build: check
 	hugo
 
 .PHONY: deploy
