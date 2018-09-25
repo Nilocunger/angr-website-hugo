@@ -19,7 +19,6 @@ deploy:
   provider: pages
   keep-history: true
   skip-cleanup: true
-  github-token: $GITHUB_TOKEN
   local-dir: public
   on:
     branch: master
